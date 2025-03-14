@@ -1,44 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PH TUBE</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    
-<header>
-<nav class="mx-[5%] mt-5 grid grid-cols-3">
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    .active {
+      background-color: red;
+      color: white;
+    }
+  </style>
+  <body>
+    <header>
+      <nav class="mx-[5%] mt-5 grid grid-cols-3">
+        <div class="logo"><img src="image/Logo.png" alt="" /></div>
+        <div class="short flex justify-center">
+            
+            <div>
+                <label class="input">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+                    <input id="search" type="search" required placeholder="Search"/>
+                  </label>
+            </div>
+        </div>
+        <div class="blog flex justify-end">
+            <button class="btn bg-gray-300">short by view</button>
+        </div>
+      </nav>
+      <hr class="mt-5 mx-[5%] border-2 opacity-20" />
+    </header>
+
+    <nav
+      id="categoryContainer"
+      class="flex-row gap-5 mx-[5%] mt-5 flex justify-center"
+    >
+      <div onclick="loadVideos()">
+        <button
+          id="btn-all"
+          class="btn btn-xs bg-gray-300 text-black hover:bg-red-600 hover:text-white"
+        >
+          All
+        </button>
+      </div>
+    </nav>
+
+    <section
+      id="videoSection"
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5 mx-[5%]"
+    ></section>
+
+    <!-- modal -->
+
+    <div>
+      <dialog id="modal" class="modal">
+        <div class="modal-box">
+          <h3 id="hello" class="text-lg font-bold">Hello!</h3>
+          <p class="py-4">Press ESC key or click outside to close</p>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+    </div>
+<!-- loadin  -->
+<div id="load" class="text-center hidden">
+    <span class="loading loading-dots loading-xl"></span>
+</div>
 
 
-    <div class="logo " ><img src="image/Logo.png" alt=""></div>
-    <div class=" short flex justify-center"> <button class="btn  bg-gray-300"> short by view</button> </div>
-    <div class=" blog flex justify-end"> <button class="btn text-white font-bold bg-red-600 border-none"> Blog</button></div>
 
-</nav>
-<hr class="mt-5 mx-[5%] border-2 opacity-20">
-
-</header>
-
-
-
-<nav id="categoryContainer" class=" flex-row gap-5 mx-[5%] mt-5 flex justify-center">
-
-     <div><button class="btn btn-xs bg-red-600 text-white">All  </button></div>
-
-</nav>
-
-
-<section id="videoSection" class=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5 mx-[5%]">
-
-
-</section>
-
-
-<script src="js/index.js"></script>
-</body>
+    <script src="js/index.js"></script>
+  </body>
 </html>
-
